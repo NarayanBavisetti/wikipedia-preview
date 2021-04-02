@@ -4,15 +4,12 @@ import { AirticelPage } from "../../pageObject/airticlePage";
 const homepage = new Homepage();
 const airticlePage = new AirticelPage();
 
-describe("Wikimedia english page test", function () {
-    beforeEach( () => {
-        cy.viewport('iphone-xr')
-        cy.getHomePage("/articles/arabic.html");  
-    })
-  // before(function () {
-  //   cy.getHomePage("/articles/arabic.html");
-  // });
-
+describe("Wikimedia arabic page test", function () {
+  beforeEach(() => {
+    cy.viewport("iphone-xr");
+    cy.getHomePage("/articles/arabic.html");
+  });
+  
   it("checking the header", () => {
     // cy.getHomePage("/articles/english.html");
     airticlePage.getHeader().should("have.text", "Wikipedia Preview demo");
@@ -35,8 +32,8 @@ describe("Wikimedia english page test", function () {
 
   it("cheching the popups القاهرة", () => {
     airticlePage.getSpan1B().should("have.text", "القاهرة");
-    airticlePage.getSpan1B().click({ force: true })
-    cy.wait(3000)
+    airticlePage.getSpan1B().click({ force: true });
+    cy.wait(3000);
     cy.popUpBoxHeaderImg().scrollIntoView().should("be.visible");
     cy.popUpBoxCloseBtn().scrollIntoView().should("be.visible");
     cy.contains("مواصلة القراءة").click();
@@ -53,8 +50,8 @@ describe("Wikimedia english page test", function () {
   });
   it("cheching the popups مصر", () => {
     airticlePage.getSpan1C().should("have.text", "مصر");
-    airticlePage.getSpan1C().click({ force: true })
-    cy.wait(3000)
+    airticlePage.getSpan1C().click({ force: true });
+    cy.wait(3000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("مواصلة القراءة").click();
@@ -71,8 +68,8 @@ describe("Wikimedia english page test", function () {
   });
   it("cheching the popups محمد_عبد_الوهاب", () => {
     airticlePage.getSpan2().should("have.text", "محمد_عبد_الوهاب");
-    airticlePage.getSpan2().click({ force: true })
-    cy.wait(3000)
+    airticlePage.getSpan2().click({ force: true });
+    cy.wait(3000);
     cy.popUpBoxHeaderImg().scrollIntoView().should("be.visible");
     cy.popUpBoxCloseBtn().scrollIntoView().should("be.visible");
     cy.contains("مواصلة القراءة").click();

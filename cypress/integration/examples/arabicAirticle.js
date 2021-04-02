@@ -4,7 +4,7 @@ import { AirticelPage } from "../pageObject/airticlePage";
 const homepage = new Homepage();
 const airticlePage = new AirticelPage();
 
-describe("Wikimedia english page test", function () {
+describe("Wikimedia arabic page test", function () {
   before(function () {
     cy.getHomePage("/articles/arabic.html");
   });

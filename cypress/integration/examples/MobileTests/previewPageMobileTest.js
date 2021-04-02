@@ -2,12 +2,11 @@ import { Homepage } from "../../pageObject/HomePage";
 const homepage = new Homepage();
 
 describe("Wikimedia preview page test", function () {
-    beforeEach( () => {
-        cy.viewport('iphone-xr')
-        cy.getHomePage("/");  
-    })
+  beforeEach(() => {
+    cy.viewport("iphone-xr");
+    cy.getHomePage("/");
+  });
   before(function () {
-    
     cy.fixture("example").then(function (data) {
       this.data = data;
     });

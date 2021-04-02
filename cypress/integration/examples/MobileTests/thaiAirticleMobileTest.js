@@ -4,14 +4,14 @@ import { AirticelPage } from "../../pageObject/airticlePage";
 const homepage = new Homepage();
 const airticlePage = new AirticelPage();
 
-describe("Wikimedia english page test", function () {
+describe("Wikimedia thai page test", function () {
   before(function () {
     cy.getHomePage("/articles/thai.html");
   });
-  beforeEach( () => {
-    cy.viewport('iphone-xr')
-    cy.getHomePage("/articles/thai.html");  
-})
+  beforeEach(() => {
+    cy.viewport("iphone-xr");
+    cy.getHomePage("/articles/thai.html");
+  });
   it("check the header", () => {
     // cy.getHomePage("/articles/english.html");
     airticlePage.getHeader().should("have.text", "Wikipedia Preview demo");
@@ -34,7 +34,7 @@ describe("Wikimedia english page test", function () {
 
   it("cheching the popups พระมหาชนก", () => {
     airticlePage.getSpan1B().should("have.text", "พระมหาชนก");
-    airticlePage.getSpan1B().click({ force: true })
+    airticlePage.getSpan1B().click({ force: true });
     cy.wait(1000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
@@ -52,7 +52,7 @@ describe("Wikimedia english page test", function () {
   });
   it("check the popup วัดร่องขุ่น", () => {
     airticlePage.getSpan1C().should("have.text", "วัดร่องขุ่น");
-    airticlePage.getSpan1C().click({ force: true })
+    airticlePage.getSpan1C().click({ force: true });
     cy.wait(1000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
@@ -67,7 +67,7 @@ describe("Wikimedia english page test", function () {
   });
   it("check the popup จังหวัดเชียงราย", () => {
     airticlePage.getSpan2().should("have.text", "จังหวัดเชียงราย");
-    airticlePage.getSpan2().click({ force: true })
+    airticlePage.getSpan2().click({ force: true });
     cy.wait(1000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");

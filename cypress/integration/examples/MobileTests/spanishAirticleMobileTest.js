@@ -4,13 +4,11 @@ import { AirticelPage } from "../../pageObject/airticlePage";
 const homepage = new Homepage();
 const airticlePage = new AirticelPage();
 
-describe("Wikimedia english page test", function () {
-
-
-  beforeEach( () => {
-    cy.viewport('iphone-xr')
-    cy.getHomePage("/articles/spanish.html");  
-})
+describe("Wikimedia spanish page test", function () {
+  beforeEach(() => {
+    cy.viewport("iphone-xr");
+    cy.getHomePage("/articles/spanish.html");
+  });
 
   it("checkthe header", () => {
     // cy.getHomePage("/articles/english.html");
@@ -35,12 +33,12 @@ describe("Wikimedia english page test", function () {
 
   it("check the popup motor de corriente alterna", () => {
     airticlePage.getSpan1().should("have.text", "motor de corriente alterna");
-    airticlePage.getSpan1().click({ force: true })
-    cy.wait(2000)
+    airticlePage.getSpan1().click({ force: true });
+    cy.wait(5000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("Continuar leyendo").click();
-    cy.wait(2000)
+    cy.wait(2000);
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg2().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg3().scrollIntoView().should("be.visible");
@@ -55,12 +53,12 @@ describe("Wikimedia english page test", function () {
 
   it("check the popup  Edison", () => {
     airticlePage.getSpan2().should("have.text", "Edison");
-    airticlePage.getSpan2().click({ force: true })
-    cy.wait(2000)
+    airticlePage.getSpan2().click({ force: true });
+    cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("Continuar leyendo").click();
-    cy.wait(2000)
+    cy.wait(2000);
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg2().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg3().scrollIntoView().should("be.visible");
@@ -75,8 +73,8 @@ describe("Wikimedia english page test", function () {
 
   it("check the popup Smiljan", () => {
     airticlePage.getSpan3().should("have.text", "Smiljan");
-    airticlePage.getSpan3().click({ force: true })
-    cy.wait(2000)
+    airticlePage.getSpan3().click({ force: true });
+    cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
@@ -104,7 +102,7 @@ describe("Wikimedia english page test", function () {
       .contains("View Source")
       .should(
         "have.attr",
-        "href",              
+        "href",
         "https://github.com/wikimedia/wikipedia-preview"
       );
   });

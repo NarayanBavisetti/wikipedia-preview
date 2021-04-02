@@ -4,12 +4,11 @@ import { AirticelPage } from "../../pageObject/airticlePage";
 const homepage = new Homepage();
 const airticlePage = new AirticelPage();
 
-describe("Wikimedia english page test", function () {
-
-  beforeEach( () => {
-    cy.viewport('iphone-xr')
-    cy.getHomePage("/articles/hindi.html");  
-})
+describe("Wikimedia hindi page test", function () {
+  beforeEach(() => {
+    cy.viewport("iphone-xr");
+    cy.getHomePage("/articles/hindi.html");
+  });
 
   it("check the header", () => {
     // cy.getHomePage("/articles/english.html");
@@ -37,12 +36,12 @@ describe("Wikimedia english page test", function () {
 
   it("check the popup मन्दिर", () => {
     airticlePage.getSpan1().should("have.text", "मन्दिर");
-    airticlePage.getSpan1().click({ force: true })
-    cy.wait(2000)
+    airticlePage.getSpan1().click({ force: true });
+    cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("पढ़ना जारी रखें").click();
-    cy.wait(2000)
+    cy.wait(2000);
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
     cy.contains("विकिपीडिया पर अधिक पढ़ें").should("be.visible");
     cy.popUpBoxFoooterLink().should(
@@ -54,8 +53,8 @@ describe("Wikimedia english page test", function () {
   });
   it("check the popup हुमांयू", () => {
     airticlePage.getSpan2().should("have.text", "हुमांयू");
-    airticlePage.getSpan2().click({ force: true })
-    cy.wait(2000)
+    airticlePage.getSpan2().click({ force: true });
+    cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
@@ -69,12 +68,12 @@ describe("Wikimedia english page test", function () {
   });
   it("check the popup अंकगणितीय", () => {
     airticlePage.getSpan4().should("have.text", "अंकगणितीय");
-    airticlePage.getSpan4().click({ force: true })
-    cy.wait(2000)
+    airticlePage.getSpan4().click({ force: true });
+    cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("पढ़ना जारी रखें").click();
-    cy.wait(2000)
+    cy.wait(2000);
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg2().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg3().scrollIntoView().should("be.visible");

@@ -8,10 +8,10 @@ describe("Wikimedia english page test", function () {
   before(function () {
     cy.getHomePage("/articles/english.html");
   });
-  beforeEach( () => {
-    cy.viewport('iphone-xr')
-    cy.getHomePage("/articles/english.html");  
-})
+  beforeEach(() => {
+    cy.viewport("iphone-xr");
+    cy.getHomePage("/articles/english.html");
+  });
 
   it("check the header", () => {
     // cy.getHomePage("/articles/english.html");
