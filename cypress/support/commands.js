@@ -87,43 +87,43 @@ Cypress.Commands.add("bodyLink", () => {
 });
 
 Cypress.Commands.add("bodyImage", () => {
-  cy.get("body > div.container > div.cover", { timeout: 5000 });
+  cy.get("body > div.container > div.cover", { timeout: 10000 });
 });
 
 Cypress.Commands.add("popUpBox", () => {
-  cy.get("body > div.wp-popup");
+  cy.get("body > div.wp-popup", { timeout: 10000 });
 });
 
 Cypress.Commands.add("popUpBoxHeaderImg", () => {
   cy.get(
     "body > div.wp-popup > div > div.wikipediapreview-header > div.wikipediapreview-header-image",
-    { timeout: 5000 }
+    { timeout: 10000 }
   );
 });
 Cypress.Commands.add("popUpBoxHeader", () => {
   cy.get(
-    "body > div.wp-popup > div > div.wikipediapreview-header > div.wikipediapreview-header-wordmark wikipediapreview-header-wordmark-with-image wikipediapreview-header-wordmark-id"
+    "body > div.wp-popup > div > div.wikipediapreview-header > div.wikipediapreview-header-wordmark wikipediapreview-header-wordmark-with-image wikipediapreview-header-wordmark-id", { timeout: 10000 }
   );
 });
 
 Cypress.Commands.add("popUpBoxFooterImg1", () => {
   cy.get(
     "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(1)",
-    { timeout: 5000 }
+    { timeout: 10000 }
   );
 });
 
 Cypress.Commands.add("popUpBoxFooterImg2", () => {
   cy.get(
     "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(2)",
-    { timeout: 5000 }
+    { timeout: 10000 }
   );
 });
 
 Cypress.Commands.add("popUpBoxFooterImg3", () => {
   cy.get(
     "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(3)",
-    { timeout: 5000 }
+    { timeout: 10000 }
   );
 });
 
