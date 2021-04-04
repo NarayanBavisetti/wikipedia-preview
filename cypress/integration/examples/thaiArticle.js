@@ -1,8 +1,8 @@
 import { Homepage } from "../pageObject/HomePage";
-import { AirticelPage } from "../pageObject/airticlePage";
+import { ArticelPage } from "../pageObject/articlePage";
 
 const homepage = new Homepage();
-const airticlePage = new AirticelPage();
+const articlePage = new ArticelPage();
 
 describe("Wikimedia thai page test", function () {
   before(function () {
@@ -11,27 +11,27 @@ describe("Wikimedia thai page test", function () {
 
   it("check the header", () => {
     // cy.getHomePage("/articles/english.html");
-    airticlePage.getHeader().should("have.text", "Wikipedia Preview demo");
-    airticlePage
+    articlePage.getHeader().should("have.text", "Wikipedia Preview demo");
+    articlePage
       .getHeader()
       .should("be.visible")
       .should("have.css", "font-size", "32px");
-    airticlePage.getHeaderLink().should("have.attr", "href", "../index.html");
+    articlePage.getHeaderLink().should("have.attr", "href", "../index.html");
   });
   it("check the title", () => {
-    airticlePage.getTitle().should("have.text", "เฉลิมชัย โฆษิตพิพัฒน์");
+    articlePage.getTitle().should("have.text", "เฉลิมชัย โฆษิตพิพัฒน์");
   });
   it("check the cover image", () => {
-    airticlePage.getCover().should("be.visible");
+    articlePage.getCover().should("be.visible");
   });
   it("Check the body", () => {
-    airticlePage.getPara1().should("have.css", "font-size", "16px");
-    airticlePage.getPara2().should("have.css", "font-size", "16px");
+    articlePage.getPara1().should("have.css", "font-size", "16px");
+    articlePage.getPara2().should("have.css", "font-size", "16px");
   });
 
   it("cheching the popups พระมหาชนก", () => {
-    airticlePage.getSpan1B().should("have.text", "พระมหาชนก");
-    airticlePage.getSpan1B().trigger("mouseenter");
+    articlePage.getSpan1B().should("have.text", "พระมหาชนก");
+    articlePage.getSpan1B().trigger("mouseenter");
     cy.wait(1000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
@@ -48,8 +48,8 @@ describe("Wikimedia thai page test", function () {
     cy.popUpBoxCloseBtn().click();
   });
   it("check the popup วัดร่องขุ่น", () => {
-    airticlePage.getSpan1C().should("have.text", "วัดร่องขุ่น");
-    airticlePage.getSpan1C().trigger("mouseenter");
+    articlePage.getSpan1C().should("have.text", "วัดร่องขุ่น");
+    articlePage.getSpan1C().trigger("mouseenter");
     cy.wait(1000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
@@ -63,8 +63,8 @@ describe("Wikimedia thai page test", function () {
     cy.popUpBoxCloseBtn().click();
   });
   it("check the popup จังหวัดเชียงราย", () => {
-    airticlePage.getSpan2().should("have.text", "จังหวัดเชียงราย");
-    airticlePage.getSpan2().trigger("mouseenter");
+    articlePage.getSpan2().should("have.text", "จังหวัดเชียงราย");
+    articlePage.getSpan2().trigger("mouseenter");
     cy.wait(1000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
@@ -82,7 +82,7 @@ describe("Wikimedia thai page test", function () {
     cy.popUpBoxCloseBtn().click();
   });
   it("check the footer", () => {
-    airticlePage
+    articlePage
       .getFooter()
       .contains("เฉลิมชัย โฆษิตพิพัฒน์")
       .should(
@@ -90,7 +90,7 @@ describe("Wikimedia thai page test", function () {
         "href",
         "https://th.m.wikipedia.org/wiki/%E0%B9%80%E0%B8%89%E0%B8%A5%E0%B8%B4%E0%B8%A1%E0%B8%8A%E0%B8%B1%E0%B8%A2_%E0%B9%82%E0%B8%86%E0%B8%A9%E0%B8%B4%E0%B8%95%E0%B8%9E%E0%B8%B4%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B9%8C"
       );
-    airticlePage
+    articlePage
       .getFooter()
       .contains("View Source")
       .should(

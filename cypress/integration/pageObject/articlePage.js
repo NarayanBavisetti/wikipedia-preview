@@ -1,4 +1,4 @@
-export class AirticelPage {
+export class ArticelPage {
   getHeader() {
     return cy.get("body > a > div.header");
   }

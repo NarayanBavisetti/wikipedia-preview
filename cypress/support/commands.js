@@ -1,7 +1,7 @@
-import { AirticelPage } from "../integration/pageObject/airticlePage";
+import { ArticelPage } from "../integration/pageObject/articlePage";
 import { Homepage } from "../integration/pageObject/HomePage";
 const homepage = new Homepage();
-const airticelPage = new AirticelPage();
+const articlePage  = new ArticelPage();
 
 Cypress.Commands.add("openingArticle", (articleName) => {
   cy.get("div.title").each(($el, index, $list) => {
@@ -45,7 +45,7 @@ Cypress.Commands.add("openingApopups2", (popupName) => {
       // cy.contains('Read more on Wikipedia').invoke('removeAttr','target').click()
       // homepage.getHomePage('/articles/english.html');
       // cy.go(-1)
-      //  airticelPage.getCloseButton('wikipediapreview-header-closebtn').click()
+      //  articlePage .getCloseButton('wikipediapreview-header-closebtn').click()
     }
   });
 });
@@ -71,7 +71,7 @@ Cypress.Commands.add("openingApopups", (popupName) => {
       // cy.contains('Read more on Wikipedia').invoke('removeAttr','target').click()
       // homepage.getHomePage('/articles/english.html');
       // cy.go(-1)
-      //  airticelPage.getCloseButton('wikipediapreview-header-closebtn').click()
+      //  articlePage .getCloseButton('wikipediapreview-header-closebtn').click()
     }
   });
 });

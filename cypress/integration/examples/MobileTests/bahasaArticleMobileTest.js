@@ -1,8 +1,8 @@
 import { Homepage } from "../../pageObject/HomePage";
-import { AirticelPage } from "../../pageObject/airticlePage";
+import { ArticelPage } from "../../pageObject/articlePage";
 
 const homepage = new Homepage();
-const airticlePage = new AirticelPage();
+const articlePage = new ArticelPage();
 
 describe("Wikimedia bahasa page test", function () {
   beforeEach(() => {
@@ -11,34 +11,34 @@ describe("Wikimedia bahasa page test", function () {
   });
   it("check the header", () => {
     // cy.getHomePage("/articles/english.html");
-    airticlePage.getHeader().should("have.text", "Wikipedia Preview demo");
-    airticlePage
+    articlePage.getHeader().should("have.text", "Wikipedia Preview demo");
+    articlePage
       .getHeader()
       .should("be.visible")
       .should("have.css", "font-size", "18px");
-    airticlePage.getHeaderLink().should("have.attr", "href", "../index.html");
+    articlePage.getHeaderLink().should("have.attr", "href", "../index.html");
   });
   it("check the title", () => {
-    airticlePage.getTitle().should("have.text", "Gili Trawangan");
+    articlePage.getTitle().should("have.text", "Gili Trawangan");
   });
   it("check the cover image", () => {
-    airticlePage.getCover().should("be.visible");
+    articlePage.getCover().should("be.visible");
   });
   it("Check the body", () => {
-    airticlePage.getPara1().should("have.css", "font-size", "16px");
-    airticlePage.getPara2().should("have.css", "font-size", "16px");
+    articlePage.getPara1().should("have.css", "font-size", "16px");
+    articlePage.getPara2().should("have.css", "font-size", "16px");
   });
 
   it("check the popups Lombok", () => {
-    airticlePage.getSpan1A().should("have.text", "Lombok");
-    airticlePage
+    articlePage.getSpan1A().should("have.text", "Lombok");
+    articlePage
       .getSpan1A()
       .should(
         "have.attr",
         "href",
         "https://id.wikipedia.org/wiki/Pulau_Lombok"
       );
-    airticlePage.getSpan1A().trigger("mouseenter");
+    articlePage.getSpan1A().trigger("mouseenter");
     cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
@@ -56,8 +56,8 @@ describe("Wikimedia bahasa page test", function () {
     cy.popUpBoxCloseBtn().click();
   });
   it("check the popup Gili Meno", () => {
-    airticlePage.getSpan2().should("have.text", "Gili Meno");
-    airticlePage.getSpan2().click({ force: true });
+    articlePage.getSpan2().should("have.text", "Gili Meno");
+    articlePage.getSpan2().click({ force: true });
     cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
@@ -76,7 +76,7 @@ describe("Wikimedia bahasa page test", function () {
   });
 
   it("check the footer", () => {
-    airticlePage
+    articlePage
       .getFooter()
       //   <a href="" target="_blank" data-wp-title="Gili_Trawangan" data-wp-lang="id"></a>
       .contains("Gili Trawangan")
@@ -102,7 +102,7 @@ describe("Wikimedia bahasa page test", function () {
       "https://id.wikipedia.org/wiki/Gili_Trawangan?wprov=wppw1"
     );
     cy.popUpBoxCloseBtn().click();
-    airticlePage
+    articlePage
       .getFooter()
       .contains("View Source")
       .should(

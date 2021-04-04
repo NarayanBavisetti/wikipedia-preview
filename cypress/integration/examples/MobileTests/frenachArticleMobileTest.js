@@ -1,8 +1,8 @@
 import { Homepage } from "../../pageObject/HomePage";
-import { AirticelPage } from "../../pageObject/airticlePage";
+import { ArticelPage } from "../../pageObject/articlePage";
 
 const homepage = new Homepage();
-const airticlePage = new AirticelPage();
+const articlePage = new ArticelPage();
 
 describe("Wikimedia french page test", function () {
   before(function () {
@@ -15,29 +15,29 @@ describe("Wikimedia french page test", function () {
 
   it("check the header", () => {
     // cy.getHomePage("/articles/english.html");
-    airticlePage.getHeader().should("have.text", "Wikipedia Preview demo");
-    airticlePage
+    articlePage.getHeader().should("have.text", "Wikipedia Preview demo");
+    articlePage
       .getHeader()
       .should("be.visible")
       .should("have.css", "font-size", "18px");
-    airticlePage.getHeaderLink().should("have.attr", "href", "../index.html");
+    articlePage.getHeaderLink().should("have.attr", "href", "../index.html");
   });
   it("check the title", () => {
-    airticlePage
+    articlePage
       .getTitle()
       .should("have.text", "Conseil de sécurité des Nations unies");
   });
   it("check the cover image", () => {
-    airticlePage.getCover().should("be.visible");
+    articlePage.getCover().should("be.visible");
   });
   it("Check the body", () => {
-    airticlePage.getPara1().should("have.css", "font-size", "16px");
-    airticlePage.getPara2().should("have.css", "font-size", "16px");
+    articlePage.getPara1().should("have.css", "font-size", "16px");
+    articlePage.getPara2().should("have.css", "font-size", "16px");
   });
 
   it("check the popup résolutions", () => {
-    airticlePage.getSpan2().should("have.text", "résolutions");
-    airticlePage.getSpan2().click({ force: true });
+    articlePage.getSpan2().should("have.text", "résolutions");
+    articlePage.getSpan2().click({ force: true });
     cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
@@ -55,8 +55,8 @@ describe("Wikimedia french page test", function () {
     cy.popUpBoxCloseBtn().click();
   });
   it("check the popup droit de veto", () => {
-    airticlePage.getSpan3().should("have.text", "droit de veto");
-    airticlePage.getSpan3().click({ force: true });
+    articlePage.getSpan3().should("have.text", "droit de veto");
+    articlePage.getSpan3().click({ force: true });
     cy.wait(2000);
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("Lire davantage sur Wikipédia").should("be.visible");
@@ -68,7 +68,7 @@ describe("Wikimedia french page test", function () {
     cy.popUpBoxCloseBtn().click();
   });
   it("check the footer", () => {
-    airticlePage
+    articlePage
       .getFooter()
       .contains("Conseil de sécurité des Nations unies")
       .should(
@@ -76,7 +76,7 @@ describe("Wikimedia french page test", function () {
         "href",
         "https://fr.m.wikipedia.org/wiki/Conseil_de_s%C3%A9curit%C3%A9_des_Nations_unies"
       );
-    airticlePage
+    articlePage
       .getFooter()
       .contains("View Source")
       .should(

@@ -1,41 +1,44 @@
-import { Homepage } from "../pageObject/HomePage";
-import { AirticelPage } from "../pageObject/airticlePage";
+import { Homepage } from "../../pageObject/HomePage";
+import { ArticelPage } from "../../pageObject/articlePage";
 
 const homepage = new Homepage();
-const airticlePage = new AirticelPage();
+const articlePage = new ArticelPage();
 
 describe("Wikimedia spanish page test", function () {
-  before(function () {
+  beforeEach(() => {
+    cy.viewport("iphone-xr");
     cy.getHomePage("/articles/spanish.html");
   });
 
   it("checkthe header", () => {
     // cy.getHomePage("/articles/english.html");
-    airticlePage.getHeader().should("have.text", "Wikipedia Preview demo");
-    airticlePage
+    articlePage.getHeader().should("have.text", "Wikipedia Preview demo");
+    articlePage
       .getHeader()
       .should("be.visible")
-      .should("have.css", "font-size", "32px");
-    airticlePage.getHeaderLink().should("have.attr", "href", "../index.html");
+      .should("have.css", "font-size", "18px");
+    articlePage.getHeaderLink().should("have.attr", "href", "../index.html");
   });
   it("check the title", () => {
-    airticlePage.getTitle().should("have.text", "Nikola Tesla");
+    articlePage.getTitle().should("have.text", "Nikola Tesla");
   });
   it("check the cover image", () => {
-    airticlePage.getCover().should("be.visible");
+    articlePage.getCover().should("be.visible");
   });
   it("Check the body", () => {
-    airticlePage.getPara1().should("have.css", "font-size", "16px");
-    airticlePage.getPara2().should("have.css", "font-size", "16px");
-    airticlePage.getPara3().should("have.css", "font-size", "16px");
+    articlePage.getPara1().should("have.css", "font-size", "16px");
+    articlePage.getPara2().should("have.css", "font-size", "16px");
+    articlePage.getPara3().should("have.css", "font-size", "16px");
   });
 
   it("check the popup motor de corriente alterna", () => {
-    airticlePage.getSpan1().should("have.text", "motor de corriente alterna");
-    airticlePage.getSpan1().trigger("mouseenter");
+    articlePage.getSpan1().should("have.text", "motor de corriente alterna");
+    articlePage.getSpan1().click({ force: true });
+    cy.wait(5000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("Continuar leyendo").click();
+    cy.wait(2000);
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg2().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg3().scrollIntoView().should("be.visible");
@@ -49,11 +52,13 @@ describe("Wikimedia spanish page test", function () {
   });
 
   it("check the popup  Edison", () => {
-    airticlePage.getSpan2().should("have.text", "Edison");
-    airticlePage.getSpan2().trigger("mouseenter");
+    articlePage.getSpan2().should("have.text", "Edison");
+    articlePage.getSpan2().click({ force: true });
+    cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("Continuar leyendo").click();
+    cy.wait(2000);
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg2().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg3().scrollIntoView().should("be.visible");
@@ -67,8 +72,9 @@ describe("Wikimedia spanish page test", function () {
   });
 
   it("check the popup Smiljan", () => {
-    airticlePage.getSpan3().should("have.text", "Smiljan");
-    airticlePage.getSpan3().trigger("mouseenter");
+    articlePage.getSpan3().should("have.text", "Smiljan");
+    articlePage.getSpan3().click({ force: true });
+    cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
@@ -83,7 +89,7 @@ describe("Wikimedia spanish page test", function () {
   });
 
   it("check the footer", () => {
-    airticlePage
+    articlePage
       .getFooter()
       .contains("Nikola Tesla")
       .should(
@@ -91,12 +97,12 @@ describe("Wikimedia spanish page test", function () {
         "href",
         "https://es.m.wikipedia.org/wiki/Nikola_Tesla"
       );
-    airticlePage
+    articlePage
       .getFooter()
       .contains("View Source")
       .should(
         "have.attr",
-        "href",              
+        "href",
         "https://github.com/wikimedia/wikipedia-preview"
       );
   });

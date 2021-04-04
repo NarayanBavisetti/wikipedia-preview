@@ -1,35 +1,39 @@
-import { Homepage } from "../pageObject/HomePage";
-import { AirticelPage } from "../pageObject/airticlePage";
+import { Homepage } from "../../pageObject/HomePage";
+import { ArticelPage } from "../../pageObject/articlePage";
 
 const homepage = new Homepage();
-const airticlePage = new AirticelPage();
+const articlePage = new ArticelPage();
 
 describe("Wikimedia english page test", function () {
   before(function () {
     cy.getHomePage("/articles/english.html");
   });
+  beforeEach(() => {
+    cy.viewport("iphone-xr");
+    cy.getHomePage("/articles/english.html");
+  });
 
   it("check the header", () => {
     // cy.getHomePage("/articles/english.html");
-    airticlePage.getHeader().should("have.text", "Wikipedia Preview demo");
-    airticlePage
+    articlePage.getHeader().should("have.text", "Wikipedia Preview demo");
+    articlePage
       .getHeader()
       .should("be.visible")
-      .should("have.css", "font-size", "32px");
-    airticlePage.getHeaderLink().should("have.attr", "href", "../index.html");
+      .should("have.css", "font-size", "18px");
+    articlePage.getHeaderLink().should("have.attr", "href", "../index.html");
   });
   it("check the title", () => {
-    airticlePage
+    articlePage
       .getTitle()
       .should("have.text", "Wildlife of the Central African Republic");
   });
   it("check the cover image", () => {
-    airticlePage.getCover().should("be.visible");
+    articlePage.getCover().should("be.visible");
   });
   it("Check the body", () => {
-    airticlePage.getPara1().should("have.css", "font-size", "16px");
-    airticlePage.getPara2().should("have.css", "font-size", "16px");
-    airticlePage.getPara3().should("have.css", "font-size", "16px");
+    articlePage.getPara1().should("have.css", "font-size", "16px");
+    articlePage.getPara2().should("have.css", "font-size", "16px");
+    articlePage.getPara3().should("have.css", "font-size", "16px");
   });
 
   it("check all the popups in loop", () => {
@@ -71,7 +75,7 @@ describe("Wikimedia english page test", function () {
   //   cy.popUpBoxCloseBtn().click();
   // });
   it("check the footer", () => {
-    airticlePage
+    articlePage
       .getFooter()
       .contains("Wildlife of the Central African Republic")
       .should(
@@ -79,7 +83,7 @@ describe("Wikimedia english page test", function () {
         "href",
         "https://en.m.wikipedia.org/wiki/Wildlife_of_the_Central_African_Republic"
       );
-    airticlePage
+    articlePage
       .getFooter()
       .contains("View Source")
       .should(

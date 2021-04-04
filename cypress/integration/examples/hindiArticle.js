@@ -1,8 +1,8 @@
 import { Homepage } from "../pageObject/HomePage";
-import { AirticelPage } from "../pageObject/airticlePage";
+import { ArticelPage } from "../pageObject/articlePage";
 
 const homepage = new Homepage();
-const airticlePage = new AirticelPage();
+const articlePage = new ArticelPage();
 
 describe("Wikimedia hindi page test", function () {
   before(function () {
@@ -11,31 +11,31 @@ describe("Wikimedia hindi page test", function () {
 
   it("check the header", () => {
     // cy.getHomePage("/articles/english.html");
-    airticlePage.getHeader().should("have.text", "Wikipedia Preview demo");
-    airticlePage
+    articlePage.getHeader().should("have.text", "Wikipedia Preview demo");
+    articlePage
       .getHeader()
       .should("be.visible")
       .should("have.css", "font-size", "32px");
-    airticlePage.getHeaderLink().should("have.attr", "href", "../index.html");
+    articlePage.getHeaderLink().should("have.attr", "href", "../index.html");
   });
   it("check the title", () => {
-    airticlePage
+    articlePage
       .getTitle()
       .should("have.text", "विस्तार से जानिये कालिंजर दुर्ग के बारे में");
   });
   it("check the cover image", () => {
-    airticlePage.getCover().should("be.visible");
+    articlePage.getCover().should("be.visible");
   });
   it("Check the body", () => {
-    airticlePage.getPara1().should("have.css", "font-size", "16px");
-    airticlePage.getPara2().should("have.css", "font-size", "16px");
-    airticlePage.getPara3().should("have.css", "font-size", "16px");
-    airticlePage.getPara4().should("have.css", "font-size", "16px");
+    articlePage.getPara1().should("have.css", "font-size", "16px");
+    articlePage.getPara2().should("have.css", "font-size", "16px");
+    articlePage.getPara3().should("have.css", "font-size", "16px");
+    articlePage.getPara4().should("have.css", "font-size", "16px");
   });
 
   it("check the popup मन्दिर", () => {
-    airticlePage.getSpan1().should("have.text", "मन्दिर");
-    airticlePage.getSpan1().trigger("mouseenter");
+    articlePage.getSpan1().should("have.text", "मन्दिर");
+    articlePage.getSpan1().trigger("mouseenter");
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("पढ़ना जारी रखें").click();
@@ -49,8 +49,8 @@ describe("Wikimedia hindi page test", function () {
     cy.popUpBoxCloseBtn().click();
   });
   it("check the popup हुमांयू", () => {
-    airticlePage.getSpan2().should("have.text", "हुमांयू");
-    airticlePage.getSpan2().trigger("mouseenter");
+    articlePage.getSpan2().should("have.text", "हुमांयू");
+    articlePage.getSpan2().trigger("mouseenter");
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
@@ -63,8 +63,8 @@ describe("Wikimedia hindi page test", function () {
     cy.popUpBoxCloseBtn().click();
   });
   it("check the popup अंकगणितीय", () => {
-    airticlePage.getSpan4().should("have.text", "अंकगणितीय");
-    airticlePage.getSpan4().trigger("mouseenter");
+    articlePage.getSpan4().should("have.text", "अंकगणितीय");
+    articlePage.getSpan4().trigger("mouseenter");
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("पढ़ना जारी रखें").click();
@@ -80,7 +80,7 @@ describe("Wikimedia hindi page test", function () {
     cy.popUpBoxCloseBtn().click();
   });
   it("check the footer", () => {
-    airticlePage
+    articlePage
       .getFooter()
       .contains("कालिंजर")
       .trigger("mouseenter")
@@ -89,7 +89,7 @@ describe("Wikimedia hindi page test", function () {
         "href",
         "https://hi.m.wikipedia.org/wiki/%E0%A4%95%E0%A4%BE%E0%A4%B2%E0%A4%BF%E0%A4%82%E0%A4%9C%E0%A4%B0_%E0%A4%A6%E0%A5%81%E0%A4%B0%E0%A5%8D%E0%A4%97"
       );
-    airticlePage
+    articlePage
       .getFooter()
       .contains("View Source")
       .should(
