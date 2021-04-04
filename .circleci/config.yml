@@ -3,6 +3,7 @@ orbs:
   cypress: cypress-io/cypress@1
 workflows:
   build:
-    jobs:
-      - cypress/run    
+    # jobs:
+    #   - cypress/run  
+      - run:  
       command: npm run dev
