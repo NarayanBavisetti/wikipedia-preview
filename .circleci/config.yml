@@ -13,6 +13,6 @@ workflows:
           start: npm run dev
           wait-on: http://localhost:8080
           record: true
-          command: cypress run --record --key cd7662bf-1c46-4172-84f3-2c329da84463
+          command: ./node_modules/.bin/cypress run --record --key cd7662bf-1c46-4172-84f3-2c329da84463
           group: chrome
           browser: chrome
