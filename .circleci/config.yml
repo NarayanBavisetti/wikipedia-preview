@@ -12,7 +12,23 @@ workflows:
           executor: cypress/browsers-chrome73-ff68
           start: npm run dev
           wait-on: http://localhost:8080
+          parallel: true
+          parallelism: 4
           record: true
           command: ./node_modules/.bin/cypress run --record --key cd7662bf-1c46-4172-84f3-2c329da84463
           group: chrome
           browser: chrome
+
+      - cypress/run:
+          name: Firefox
+          requires:
+            - cypress/install
+          executor: cypress/browsers-chrome73-ff68
+          record: true
+          start: npm run dev
+          wait-on: http://localhost:8080
+          parallel: true
+          parallelism: 2
+          command: ./node_modules/.bin/cypress run --record --key cd7662bf-1c46-4172-84f3-2c329da84463
+          group: firefox
+          browser: firefox
