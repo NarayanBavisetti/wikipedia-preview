@@ -1,9 +1,17 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1.0.0
+  cypress: cypress-io/cypress@1
 workflows:
   build:
     jobs:
+      - cypress/install
       - cypress/run:
-           build: "npm run build"
-           record: true
+          name: Chrome
+          requires:
+            - cypress/install
+          executor: cypress/browsers-chrome73-ff68
+          start: npm start
+          wait-on: http://localhost:3000
+          record: true
+          group: chrome
+          browser: chrome
