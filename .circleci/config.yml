@@ -1,9 +1,9 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1.1.0
+  cypress: cypress-io/cypress@1.0.0
 workflows:
   build:
     jobs:
-      - cypress/run  
-start : npx cypress run
-Wait on: https://localhost:8080
+      - cypress/run:
+           build: "npm run build"
+           record: true
