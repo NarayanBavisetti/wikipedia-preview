@@ -134,6 +134,7 @@ Cypress.Commands.add("popUpBoxCloseBtn", () => {
 });
 Cypress.Commands.add("popUpBoxFoooterLink", () => {
   cy.get(
-    "body > div.wp-popup > div.wikipediapreview > div.wikipediapreview-footer  > a"
+    "body > div.wp-popup > div.wikipediapreview > div.wikipediapreview-footer  > a",
+    { timeout: 10000 }
   );
 });

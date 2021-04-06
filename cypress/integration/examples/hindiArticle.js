@@ -34,6 +34,7 @@ describe("Wikimedia hindi page test", function () {
   });
 
   it("check the popup मन्दिर", () => {
+    cy.wait(10000)
     articlePage.getSpan1().should("have.text","मन्दिर");
     articlePage.getSpan1().trigger("mouseenter");
     cy.popUpBoxHeaderImg().should("be.visible");
