@@ -34,23 +34,23 @@ describe("Wikimedia hindi page test", function () {
     articlePage.getPara4().should("have.css", "font-size", "16px");
   });
 
-  it("check the popup मन्दिर", () => {
-    articlePage.getSpan1().should("have.text", "मन्दिर");
-    articlePage.getSpan1().click({ force: true });
-    cy.wait(2000);
-    cy.popUpBoxHeaderImg().should("be.visible");
-    cy.popUpBoxCloseBtn().should("be.visible");
-    cy.contains("पढ़ना जारी रखें").click();
-    cy.wait(2000);
-    cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
-    cy.contains("विकिपीडिया पर अधिक पढ़ें").should("be.visible");
-    cy.popUpBoxFoooterLink().should(
-      "have.attr",
-      "href",
-      "https://hi.wikipedia.org/wiki/%E0%A4%AE%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A4%BF%E0%A4%B0?wprov=wppw1"
-    );
-    cy.popUpBoxCloseBtn().click();
-  });
+  // it("check the popup मन्दिर", () => {
+  //   articlePage.getSpan1().should("have.text", "मन्दिर");
+  //   articlePage.getSpan1().click({ force: true });
+  //   cy.wait(2000);
+  //   cy.popUpBoxHeaderImg().should("be.visible");
+  //   cy.popUpBoxCloseBtn().should("be.visible");
+  //   cy.contains("पढ़ना जारी रखें").click();
+  //   cy.wait(2000);
+  //   cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
+  //   cy.contains("विकिपीडिया पर अधिक पढ़ें").should("be.visible");
+  //   cy.popUpBoxFoooterLink().should(
+  //     "have.attr",
+  //     "href",
+  //     "https://hi.wikipedia.org/wiki/%E0%A4%AE%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A4%BF%E0%A4%B0?wprov=wppw1"
+  //   );
+  //   cy.popUpBoxCloseBtn().click();
+  // });
   it("check the popup हुमांयू", () => {
     articlePage.getSpan2().should("have.text", "हुमांयू");
     articlePage.getSpan2().click({ force: true });

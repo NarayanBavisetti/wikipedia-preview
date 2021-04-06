@@ -29,23 +29,23 @@ describe("Wikimedia arabic page test", function () {
     articlePage.getPara2().should("have.css", "font-size", "16px");
   });
 
-  it("cheching the popups القاهرة", () => {
-    articlePage.getSpan1B().should("have.text", "القاهرة");
-    articlePage.getSpan1B().trigger("mouseenter");
-    cy.popUpBoxHeaderImg().should("be.visible");
-    cy.popUpBoxCloseBtn().should("be.visible");
-    cy.contains("مواصلة القراءة").click();
-    cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
-    cy.popUpBoxFooterImg2().scrollIntoView().should("be.visible");
-    cy.popUpBoxFooterImg3().scrollIntoView().should("be.visible");
-    cy.contains("اقرأ المزيد عن ويكيبيديا").should("be.visible");
-    cy.popUpBoxFoooterLink().should(
-      "have.attr",
-      "href",
-      "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9?wprov=wppw1"
-    );
-    cy.popUpBoxCloseBtn().click();
-  });
+  // it("cheching the popups القاهرة", () => {
+  //   articlePage.getSpan1B().should("have.text", "القاهرة");
+  //   articlePage.getSpan1B().trigger("mouseenter");
+  //   cy.popUpBoxHeaderImg().should("be.visible");
+  //   cy.popUpBoxCloseBtn().should("be.visible");
+  //   cy.contains("مواصلة القراءة").click();
+  //   cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
+  //   cy.popUpBoxFooterImg2().scrollIntoView().should("be.visible");
+  //   cy.popUpBoxFooterImg3().scrollIntoView().should("be.visible");
+  //   cy.contains("اقرأ المزيد عن ويكيبيديا").should("be.visible");
+  //   cy.popUpBoxFoooterLink().should(
+  //     "have.attr",
+  //     "href",
+  //     "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9?wprov=wppw1"
+  //   );
+  //   cy.popUpBoxCloseBtn().click();
+  // });
   it("cheching the popups مصر", () => {
     articlePage.getSpan1C().should("have.text", "مصر");
     articlePage.getSpan1C().trigger("mouseenter");
