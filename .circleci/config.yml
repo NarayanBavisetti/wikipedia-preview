@@ -9,6 +9,7 @@ workflows:
           name: Chrome
           requires:
             - cypress/install
+          store_artifacts: true 
           executor: cypress/browsers-chrome73-ff68
           start: npm run dev
           wait-on: http://localhost:8080

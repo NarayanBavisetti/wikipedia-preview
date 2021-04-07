@@ -33,7 +33,6 @@ describe("Wikimedia arabic page test", function () {
   // it("cheching the popups القاهرة", () => {
   //   articlePage.getSpan1B().should("have.text", "القاهرة");
   //   articlePage.getSpan1B().click({ force: true });
-  //   cy.wait(3000);
   //   cy.popUpBoxHeaderImg().scrollIntoView().should("be.visible");
   //   cy.popUpBoxCloseBtn().scrollIntoView().should("be.visible");
   //   cy.contains("مواصلة القراءة").click();
@@ -51,7 +50,6 @@ describe("Wikimedia arabic page test", function () {
   it("cheching the popups مصر", () => {
     articlePage.getSpan1C().should("have.text", "مصر");
     articlePage.getSpan1C().click({ force: true });
-    cy.wait(3000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("مواصلة القراءة").click();
@@ -69,7 +67,6 @@ describe("Wikimedia arabic page test", function () {
   it("cheching the popups محمد_عبد_الوهاب", () => {
     articlePage.getSpan2().should("have.text", "محمد_عبد_الوهاب");
     articlePage.getSpan2().click({ force: true });
-    cy.wait(3000);
     cy.popUpBoxHeaderImg().scrollIntoView().should("be.visible");
     cy.popUpBoxCloseBtn().scrollIntoView().should("be.visible");
     cy.contains("مواصلة القراءة").click();

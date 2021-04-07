@@ -34,11 +34,9 @@ describe("Wikimedia spanish page test", function () {
   it("check the popup motor de corriente alterna", () => {
     articlePage.getSpan1().should("have.text", "motor de corriente alterna");
     articlePage.getSpan1().click({ force: true });
-    cy.wait(5000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("Continuar leyendo").click();
-    cy.wait(2000);
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg2().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg3().scrollIntoView().should("be.visible");
@@ -54,11 +52,9 @@ describe("Wikimedia spanish page test", function () {
   it("check the popup  Edison", () => {
     articlePage.getSpan2().should("have.text", "Edison");
     articlePage.getSpan2().click({ force: true });
-    cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("Continuar leyendo").click();
-    cy.wait(2000);
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg2().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg3().scrollIntoView().should("be.visible");
@@ -74,7 +70,6 @@ describe("Wikimedia spanish page test", function () {
   it("check the popup Smiljan", () => {
     articlePage.getSpan3().should("have.text", "Smiljan");
     articlePage.getSpan3().click({ force: true });
-    cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");

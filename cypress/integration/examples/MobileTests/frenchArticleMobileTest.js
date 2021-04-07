@@ -38,11 +38,9 @@ describe("Wikimedia french page test", function () {
   it("check the popup résolutions", () => {
     articlePage.getSpan2().should("have.text", "résolutions");
     articlePage.getSpan2().click({ force: true });
-    cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("Continuer à lire").click();
-    cy.wait(2000);
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg2().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg3().scrollIntoView().should("be.visible");
@@ -57,7 +55,6 @@ describe("Wikimedia french page test", function () {
   it("check the popup droit de veto", () => {
     articlePage.getSpan3().should("have.text", "droit de veto");
     articlePage.getSpan3().click({ force: true });
-    cy.wait(2000);
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("Lire davantage sur Wikipédia").should("be.visible");
     cy.popUpBoxFoooterLink().should(

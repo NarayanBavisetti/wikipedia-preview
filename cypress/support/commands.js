@@ -76,6 +76,7 @@ Cypress.Commands.add("openingApopups", (popupName) => {
   });
 });
 
+
 Cypress.Commands.add("bodyTitle", () => {
   cy.get("body> div.container > div.listview > div.item > a ");
 });
@@ -126,6 +127,139 @@ Cypress.Commands.add("popUpBoxFooterImg3", () => {
     { timeout: 10000 }
   );
 });
+Cypress.Commands.add("popUpBoxFooterImg4", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(4)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg5", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(5)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg6", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(6)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg7", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(7)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg8", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(8)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg9", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(9)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg10", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(10)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg11", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(11)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg12", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(12)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg13", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(13)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg14", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(14)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg15", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(15)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg16", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(16)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg17", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(17)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg18", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(18)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg19", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(19)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg20", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(20)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg21", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(21)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg22", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(22)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg23", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(23)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg24", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(24)",
+    { timeout: 10000 }
+  );
+});
+Cypress.Commands.add("popUpBoxFooterImg25", () => {
+  cy.get(
+    "body > div.wp-popup > div > div.wikipediapreview-body > div > div > div:nth-child(25)",
+    { timeout: 10000 }
+  );
+});
+
 
 Cypress.Commands.add("popUpBoxCloseBtn", () => {
   cy.get(

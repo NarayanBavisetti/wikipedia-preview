@@ -35,11 +35,9 @@ describe("Wikimedia thai page test", function () {
   it("cheching the popups พระมหาชนก", () => {
     articlePage.getSpan1B().should("have.text", "พระมหาชนก");
     articlePage.getSpan1B().click({ force: true });
-    cy.wait(1000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("อ่านต่อ").click();
-    cy.wait(1000);
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
     cy.contains("อ่านเพิ่มเติมบนวิกิพีเดีย").should("be.visible");
@@ -53,7 +51,6 @@ describe("Wikimedia thai page test", function () {
   it("check the popup วัดร่องขุ่น", () => {
     articlePage.getSpan1C().should("have.text", "วัดร่องขุ่น");
     articlePage.getSpan1C().click({ force: true });
-    cy.wait(1000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
@@ -68,11 +65,9 @@ describe("Wikimedia thai page test", function () {
   it("check the popup จังหวัดเชียงราย", () => {
     articlePage.getSpan2().should("have.text", "จังหวัดเชียงราย");
     articlePage.getSpan2().click({ force: true });
-    cy.wait(1000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("อ่านต่อ").click();
-    cy.wait(1000);
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg2().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg3().scrollIntoView().should("be.visible");

@@ -37,11 +37,9 @@ describe("Wikimedia hindi page test", function () {
   // it("check the popup मन्दिर", () => {
   //   articlePage.getSpan1().should("have.text", "मन्दिर");
   //   articlePage.getSpan1().click({ force: true });
-  //   cy.wait(2000);
   //   cy.popUpBoxHeaderImg().should("be.visible");
   //   cy.popUpBoxCloseBtn().should("be.visible");
   //   cy.contains("पढ़ना जारी रखें").click();
-  //   cy.wait(2000);
   //   cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
   //   cy.contains("विकिपीडिया पर अधिक पढ़ें").should("be.visible");
   //   cy.popUpBoxFoooterLink().should(
@@ -54,7 +52,6 @@ describe("Wikimedia hindi page test", function () {
   it("check the popup हुमांयू", () => {
     articlePage.getSpan2().should("have.text", "हुमांयू");
     articlePage.getSpan2().click({ force: true });
-    cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
@@ -69,11 +66,9 @@ describe("Wikimedia hindi page test", function () {
   it("check the popup अंकगणितीय", () => {
     articlePage.getSpan4().should("have.text", "अंकगणितीय");
     articlePage.getSpan4().click({ force: true });
-    cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("पढ़ना जारी रखें").click();
-    cy.wait(2000);
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg2().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg3().scrollIntoView().should("be.visible");

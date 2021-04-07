@@ -39,11 +39,9 @@ describe("Wikimedia bahasa page test", function () {
         "https://id.wikipedia.org/wiki/Pulau_Lombok"
       );
     articlePage.getSpan1A().trigger("mouseenter");
-    cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("Lanjutkan Membaca").click();
-    cy.wait(2000);
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg2().should("be.visible");
     cy.popUpBoxFooterImg3().should("be.visible");
@@ -58,11 +56,9 @@ describe("Wikimedia bahasa page test", function () {
   it("check the popup Gili Meno", () => {
     articlePage.getSpan2().should("have.text", "Gili Meno");
     articlePage.getSpan2().click({ force: true });
-    cy.wait(2000);
     cy.popUpBoxHeaderImg().should("be.visible");
     cy.popUpBoxCloseBtn().should("be.visible");
     cy.contains("Lanjutkan Membaca").click();
-    cy.wait(2000);
     cy.popUpBoxFooterImg1().scrollIntoView().should("be.visible");
     cy.popUpBoxFooterImg2().should("be.visible");
     cy.popUpBoxFooterImg3().should("be.visible");
